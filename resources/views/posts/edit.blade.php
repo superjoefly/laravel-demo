@@ -28,6 +28,27 @@
                   {{-- Use Old Data for Input Fields --}}
                   <textarea rows="5" id="body" name="body" style="width: 100%; border:none;" class="w3-border-bottom w3-border-light-gray">{{old('body', $post->body)}}</textarea>
                 </p>
+
+                <div>
+                  <h3>Tags</h3>
+                  <p>
+                      <input class="w3-check w3-margin" type="checkbox" id="javascript" name="tags[]" value="1" @if(in_array(1, old('tags'))) checked @endif />
+                      <label>javascript</label>
+
+                      <input class="w3-check w3-margin" type="checkbox" id="vuejs" name="tags[]" value="2" @if(in_array(2, old('tags'))) checked @endif />
+                      <label>vuejs</label>
+
+                      <input class="w3-check w3-margin" type="checkbox" id="php" name="tags[]" value="3" @if(in_array(3, old('tags'))) checked @endif />
+                      <label>php</label>
+
+                      <input class="w3-check w3-margin" type="checkbox" id="laravel" name="tags[]" value="4" @if(in_array(4, old('tags'))) checked @endif />
+                      <label>laravel</label>
+
+                      <input class="w3-check w3-margin" type="checkbox" id="mysql" name="tags[]" value="5" @if(in_array(5, old('tags'))) checked @endif />
+                      <label>mysql</label>
+                  </p>
+                </div>
+
                 <input type="submit" name="Submit" value="Update" class="w3-button w3-blue w3-round">
                 <br /><br />
 

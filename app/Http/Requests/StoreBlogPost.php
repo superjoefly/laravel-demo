@@ -26,6 +26,7 @@ class StoreBlogPost extends FormRequest
         return [
         'title' => 'required|unique:posts|max:255',
         'body' => 'required',
+        'tag' => 'nullable|string'
         ];
     }
 }

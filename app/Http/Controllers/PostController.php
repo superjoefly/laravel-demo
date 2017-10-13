@@ -45,7 +45,7 @@ class PostController extends Controller
      */
     public function store(StoreBlogPost $request)
     {
-        // Create and save the post (store in database)
+        // // Create and save the post (store in database)
         // Post::create([
         //     'user_id' => auth()->user()->id,
         //     'title' => request('title'),
@@ -53,6 +53,15 @@ class PostController extends Controller
         // ]);
 
         auth()->user()->posts()->save(new Post($request->all()));
+
+        // Sync tags
+        $tags = [];
+        if (!empty($_POST['tags'])) {
+            foreach ($_POST['tags'] as $tag=>$id) {
+                array_push($tags, $id);
+                $post->tags()->sync($tags);
+            }
+        }
 
         // flash-message is a partial that is rendered in app.blade.php
         session()->flash('message', 'Post Created!');

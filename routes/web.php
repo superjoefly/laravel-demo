@@ -28,7 +28,7 @@ Auth::routes();
 
 
 
-// Routes for posts
+// Routes Resource for posts
 Route::resource('posts', 'PostController');
 
 
