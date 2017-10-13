@@ -3,7 +3,7 @@
   <h1><b>SJF Blog</b></h1>
   <p>Welcome to the blog of <span class="w3-tag w3-teal">SuperJoeFly</span></p>
 
-    {{-- @php
+    @php
       function RandomQuotes($timebase, $quotesArray) {
         $count = count($quotesArray);
         $index = ($timebase % $count);
@@ -11,12 +11,13 @@
       }
       $dayOfTheYear = date('z');
       $randomQuote = RandomQuotes($dayOfTheYear, $quotes);
-      // dd($randomQuote)
-    @endphp --}}
+    @endphp
 
-    {{-- <h3 class="w3-text-teal">{{$randomQuote['body']}}</h3>
-    <p>-{{$randomQuote['author']}}</p> --}}
+    <h3 class="w3-text-teal"><q>{{$randomQuote['body']}}</q></h3>
+
+    <p class="w3-text-indigo">-
+      <i>{{$randomQuote['author']}}</i>
+    </p>
 
     <img src="/images/avatar.png" style="height: 200px; width: 200px;" />
-  </p>
 </header>

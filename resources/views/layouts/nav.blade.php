@@ -29,7 +29,7 @@
               <span>&#9660</span>
             </a>
             <br />
-              <ul class="w3-hide w3-border w3-border-white w3-animate-right" id="logout">
+              <ul class="w3-hide w3-animate-right" style="border: 1px solid #f1f1f1;" id="logout">
                   <li class="w3-right-align w3-margin-right">
                       {{-- Submit Logout --}}
                       <a class="w3-hide-small" href="{{ route('logout') }}"

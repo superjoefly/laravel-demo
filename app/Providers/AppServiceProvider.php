@@ -13,9 +13,16 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->composer('layouts.tags', function ($view) {
-            $tags = \App\Tag::has('posts')->pluck('name');
-            $view->with(compact('tags'));
+        view()->composer('layouts.archives', function ($view) {
+            $view->with('archives', \App\Post::archives());
+        });
+
+        view()->composer('*', function ($view) {
+            $view->with('tags', \App\Tag::has('posts')->pluck('name'));
+        });
+
+        view()->composer('layouts.header', function ($view) {
+            $view->with('quotes', \App\Quote::quotes());
         });
     }
 

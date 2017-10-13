@@ -38,5 +38,10 @@ Route::get('/posts/tags/{tag}', 'TagController@index');
 
 
 
+// Comments
+Route::post('/posts/{post}/comments', 'CommentController@store');
+
+
+
 // Adminer
 Route::any('adminer', '\Miroc\LaravelAdminer\AdminerAutologinController@index');

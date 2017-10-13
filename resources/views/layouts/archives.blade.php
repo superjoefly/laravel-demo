@@ -5,12 +5,12 @@
   </div>
   <div class="w3-container w3-white">
   <p>
-    {{-- @foreach ($archives as $archive)
-      <a href="/?month={{$archive['month']}}&year={{$archive['year']}}" class="w3-tag w3-light-grey w3-margin-bottom w3-hover-teal"
+    @foreach ($archives as $archive)
+      <a href="/?month={{$archive['month']}}&year={{$archive['year']}}" class="w3-tag w3-light-grey w3-hover-teal"
       style="text-decoration: none;">
         {{$archive['month'] . ' ' . $archive['year']}}
       </a>
-    @endforeach --}}
+    @endforeach
   </p>
   </div>
 </div>
