@@ -12,9 +12,11 @@ class TagController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Tag $tag)
     {
-        //
+        $posts = $tag->posts;
+
+        return view('posts.index', compact('posts'));
     }
 
     /**

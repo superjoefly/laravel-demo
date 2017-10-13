@@ -13,20 +13,25 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
+<body class="w3-light-grey">
 
+  <div class="w3-content" style="max-width:100%;" id="app">
+    @include('layouts.nav')
+    @include('layouts.header')
+    @include('partials.message')
 
-    <div id="app">
-        @include('layouts.nav')
+    {{-- Grid --}}
+    <div class="w3-row w3-padding">
 
-        <div class="w3-container">
-          <h1 class="w3-center">Welcome To My Blog!</h1>
-        </div>
+      {{-- Yielded content is dyanamic and will change from view to view --}}
+      @yield('content')
 
-        @yield('content')
-
-        @include('partials.message')
-    </div>
+    </div><br />
+    @include('layouts.archives')
+    @include('layouts.tags')
+    @include('layouts.footer')
+    {{-- End Grid --}}
+  </div>
 
 
     <!-- Scripts -->
