@@ -11,11 +11,11 @@
 |
 */
 
-// // Welcome View
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-Route::get('/', 'PostController@index');
+// Welcome View
+Route::get('/', function () {
+    return view('welcome');
+});
+// Route::get('/', 'PostController@index');
 
 
 // Home View/ Dashboard

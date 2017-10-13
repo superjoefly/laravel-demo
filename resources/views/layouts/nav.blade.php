@@ -13,6 +13,7 @@
 
         {{-- Links --}}
         @auth ()
+            <a href="/posts" class="w3-bar-item w3-hide-small">Blog</a>
             <a href="/posts/create" class="w3-bar-item w3-hide-small">Post</a>
             <a href="#" class="w3-bar-item w3-hide-small">Link 2</a>
         @endauth
@@ -56,6 +57,9 @@
                 <li><a href="{{ route('register') }}">Register</a></li>
             @else
                     {{-- Links --}}
+                    <li>
+                      <a href="/posts">Blog</a>
+                    </li>
                     <li>
                       <a href="/posts/create">Post</a>
                     </li>

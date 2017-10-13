@@ -4,5 +4,5 @@
   <button class="w3-button w3-black w3-padding-large w3-margin-bottom">Next »</button>
 
   {{-- Copyright --}}
-  <p>Copyright &copy; @{{copyright}} by SJF Developments</p>
+  <p>Copyright &copy; {{date('Y')}}  by SJF Developments</p>
 </footer>

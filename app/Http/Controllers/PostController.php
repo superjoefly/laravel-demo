@@ -22,11 +22,24 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::latest()
-        // ->filter(request(['month', 'year']))
-        ->get();
+        // $posts = Post::latest()->get();
+        //
+        // $archives = Post::selectRaw(
+        // 'year(created_at) as year,
+        // monthname(created_at) as month,
+        // count(*) published')
+        // ->groupBy('year', 'month')
+        // ->orderByRaw('min(created_at)')
+        // ->get()
+        // ->toArray();
+        //
+        // return view('posts.index', compact('posts', 'archives'));
 
-        return view('posts.index', compact('posts'));
+        $posts = Post::latest()
+              ->filter(request(['month', 'year']))
+              ->get();
+
+        return view('posts.index', compact('posts', 'archives'));
     }
 
     /**
@@ -47,14 +60,12 @@ class PostController extends Controller
      */
     public function store(StoreBlogPost $request)
     {
-        // // Create and save the post (store in database)
-        // Post::create([
-        //     'user_id' => auth()->user()->id,
-        //     'title' => request('title'),
-        //     'body' => request('body')
-        // ]);
-
-        auth()->user()->posts()->save(new Post($request->all()));
+        // Create the post
+        $post = Post::create([
+            'title' => request('title'),
+            'body' => request('body'),
+            'user_id' => auth()->id()
+        ]);
 
         // Sync tags
         $tags = [];

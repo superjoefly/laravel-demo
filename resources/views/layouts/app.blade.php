@@ -17,7 +17,7 @@
 
   <div class="w3-content" style="max-width:100%;" id="app">
     @include('layouts.nav')
-    @include('layouts.header')
+    {{-- @include('layouts.header') --}}
     @include('partials.message')
 
     {{-- Grid --}}

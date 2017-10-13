@@ -21,7 +21,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with('tags', \App\Tag::has('posts')->pluck('name'));
         });
 
-        view()->composer('layouts.header', function ($view) {
+        view()->composer('*', function ($view) {
             $view->with('quotes', \App\Quote::quotes());
         });
     }

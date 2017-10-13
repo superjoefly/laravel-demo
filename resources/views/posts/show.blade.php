@@ -32,7 +32,7 @@
   </div>
 
   {{-- Show Comments --}}
-  <div class="w3-container w3-border-bottom">
+  <div class="w3-container">
     <h4>Comments:</h4>
     @if (count($post->comments) >= 1)
       @foreach ($post->comments as $comment)
@@ -42,6 +42,7 @@
             <span class="w3-text-teal">{{$comment->user->name}}</span> on
             {{ $comment->created_at->diffForHumans() }}
           </span>
+        </div>
       @endforeach
     @else
       <p>No comments available...</p>

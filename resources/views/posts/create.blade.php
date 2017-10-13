@@ -24,20 +24,20 @@
                 <div>
                   <h3>Tags</h3>
                   <p>
-                      <input class="w3-check w3-margin" type="checkbox" id="javascript" name="tags[]" value="1" />
-                      <label>javascript</label>
+                    <input class="w3-check w3-margin" type="checkbox" id="javascript" name="tags[]" value="1" />
+                    <label>javascript</label>
 
-                      <input class="w3-check w3-margin" type="checkbox" id="vuejs" name="tags[]" value="2" />
-                      <label>vuejs</label>
+                    <input class="w3-check w3-margin" type="checkbox" id="vuejs" name="tags[]" value="2" />
+                    <label>vuejs</label>
 
-                      <input class="w3-check w3-margin" type="checkbox" id="php" name="tags[]" value="3" />
-                      <label>php</label>
+                    <input class="w3-check w3-margin" type="checkbox" id="php" name="tags[]" value="3" />
+                    <label>php</label>
 
-                      <input class="w3-check w3-margin" type="checkbox" id="laravel" name="tags[]" value="4" />
-                      <label>laravel</label>
+                    <input class="w3-check w3-margin" type="checkbox" id="laravel" name="tags[]" value="4" />
+                    <label>laravel</label>
 
-                      <input class="w3-check w3-margin" type="checkbox" id="mysql" name="tags[]" value="5" />
-                      <label>mysql</label>
+                    <input class="w3-check w3-margin" type="checkbox" id="mysql" name="tags[]" value="5" />
+                    <label>mysql</label>
                   </p>
                 </div>
 
