@@ -33,5 +33,10 @@ Route::resource('posts', 'PostController');
 
 
 
+// Tags
+Route::get('/posts/tags/{tag}', 'TagController@index');
+
+
+
 // Adminer
 Route::any('adminer', '\Miroc\LaravelAdminer\AdminerAutologinController@index');

@@ -13,7 +13,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        view()->composer('layouts.tags', function ($view) {
+            $tags = \App\Tag::has('posts')->pluck('name');
+            $view->with(compact('tags'));
+        });
     }
 
     /**

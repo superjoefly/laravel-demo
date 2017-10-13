@@ -22,7 +22,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::latest()->get();
+        $posts = Post::latest()
+        // ->filter(request(['month', 'year']))
+        ->get();
 
         return view('posts.index', compact('posts'));
     }
