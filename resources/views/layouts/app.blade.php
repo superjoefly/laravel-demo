@@ -12,30 +12,40 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <style media="screen">
+        /*For fixed footer*/
+        html {
+            margin-bottom: 100px;
+        }
+    </style>
+
 </head>
 <body class="w3-light-grey">
 
-  <div class="w3-content" style="max-width:100%;" id="app">
-    @include('layouts.nav')
-    {{-- @include('layouts.header') --}}
-    @include('partials.message')
+    <div class="w3-content" style="max-width:100%;" id="app">
+      @include('layouts.nav')
 
-    {{-- Grid --}}
-    <div class="w3-row w3-padding">
+      <div class="w3-row w3-padding">
+        {{-- Yield content to all pages --}}
+        @yield('content')
+      </div><br />
 
-      {{-- Yielded content is dyanamic and will change from view to view --}}
-      @yield('content')
+        {{-- Only show these for authorized users --}}
+        @auth
+          @include('partials.message')
+          @include('layouts.archives')
+          @include('layouts.tags')
+        @endauth
 
-    </div><br />
-    @include('layouts.archives')
-    @include('layouts.tags')
-    @include('layouts.footer')
-    {{-- End Grid --}}
-  </div>
+        {{-- Show on all pages --}}
+        @include('layouts.footer')
+    </div>
 
 
     <!-- Scripts -->
 
+    {{-- Script for naviagation --}}
     @include('partials.script')
 
     <script src="{{ asset('js/app.js') }}"></script>

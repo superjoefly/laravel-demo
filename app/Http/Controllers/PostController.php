@@ -22,24 +22,11 @@ class PostController extends Controller
      */
     public function index()
     {
-        // $posts = Post::latest()->get();
-        //
-        // $archives = Post::selectRaw(
-        // 'year(created_at) as year,
-        // monthname(created_at) as month,
-        // count(*) published')
-        // ->groupBy('year', 'month')
-        // ->orderByRaw('min(created_at)')
-        // ->get()
-        // ->toArray();
-        //
-        // return view('posts.index', compact('posts', 'archives'));
-
         $posts = Post::latest()
               ->filter(request(['month', 'year']))
               ->get();
 
-        return view('posts.index', compact('posts', 'archives'));
+        return view('posts.index', compact('posts'));
     }
 
     /**
@@ -116,6 +103,15 @@ class PostController extends Controller
 
         // Shorthand
         $post->update($request->all());
+
+        // Sync tags
+        $tags = [];
+        if (!empty($_POST['tags'])) {
+            foreach ($_POST['tags'] as $tag=>$id) {
+                array_push($tags, $id);
+                $post->tags()->sync($tags);
+            }
+        }
 
         // flash-message is a partial that is rendered in app.blade.php
         session()->flash('message', 'Post Updated!');

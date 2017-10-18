@@ -10,6 +10,6 @@
 
   <h3 class="w3-text-teal"><q>{{$randomQuote['body']}}</q></h3>
 
-  <p class="w3-text-indigo">-
+  <p class="w3-text-orange">-
     <i>{{$randomQuote['author']}}</i>
   </p>

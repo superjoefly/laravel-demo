@@ -15,7 +15,6 @@
         @auth ()
             <a href="/posts" class="w3-bar-item w3-hide-small">Blog</a>
             <a href="/posts/create" class="w3-bar-item w3-hide-small">Post</a>
-            <a href="#" class="w3-bar-item w3-hide-small">Link 2</a>
         @endauth
 
         {{-- Auth Links --}}
@@ -63,7 +62,6 @@
                     <li>
                       <a href="/posts/create">Post</a>
                     </li>
-                    <li><a href="#">Link 2</a></li>
                     {{-- Toggle Logout --}}
                     <li>
                       <a href="#" onclick="toggleLogout2()">

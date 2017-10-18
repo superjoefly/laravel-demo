@@ -1,8 +1,5 @@
 <!-- Footer -->
-<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
-  <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">Previous</button>
-  <button class="w3-button w3-black w3-padding-large w3-margin-bottom">Next »</button>
-
+<footer class="w3-container w3-dark-grey w3-bottom w3-center">
   {{-- Copyright --}}
-  <p>Copyright &copy; {{date('Y')}}  by SJF Developments</p>
+  <p>Copyright &copy; {{date('Y')}}  by <a href="http://sjfly.site" class="w3-text-orange">SJF Developments</a></p>
 </footer>

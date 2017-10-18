@@ -26,17 +26,18 @@ ul {
 a {
   text-decoration: none;
   cursor: pointer;
+  color: $w3-teal !important;
 }
 
 a:hover {
-  color: $w3-teal !important;
+  color: $w3-orange !important;
 }
 
 // Flash Message
 #flash-message {
   position: absolute;
   right: 20px;
-  bottom: 50px;
+  top: 75px;
   z-index: 10;
   animation: flash-message 4s forwards;
 }
