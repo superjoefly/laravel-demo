@@ -2,12 +2,13 @@
 
 @section('content')
   <div class="w3-container w3-margin w3-white">
-    <h3 class="w3-text-teal">{{ $post->title }}</h3>
 
     {{-- Only show 'edit' for signed in user's posts --}}
     @if (Auth::id() == $post->user_id)
       <a href="/posts/{{$post->id}}/edit" class="w3-right w3-text-teal w3-hover-text-gray">Edit</a>
     @endif
+    
+    <h3 class="w3-text-teal">{{ $post->title }}</h3>
 
     <p>{{ $post->body }}</p>
 
